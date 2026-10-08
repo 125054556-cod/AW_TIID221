@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examen</title>
+</head>
+<style>
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    body {
+            background-color: blue;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: var(--bg-body);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .proyecto {
+            max-width: 1000px;
+            width: 100%;
+            background-color: rgb(28, 14, 216);
+            border: 5px double #111;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 10px;
+        }
+
+    header{
+            grid-column: 1 / -1;
+            background-color: rgb(235, 214, 17);
+            border: 2px solid #111;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    }
+    .img1 {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #111;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 2em;
+            background: white;
+        }
+
+        .titulo {
+            text-align: center;
+        }
+
+        .titulo h1 {
+            margin: 0;
+            font-size: 4em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .titulo p {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .informacion {
+            border: 2px solid #111;
+            padding: 5px 10px;
+            font-family: Arial, sans-serif;
+            font-size: 0.8em;
+            background: white;
+            text-align: right;
+        }
+        nav {
+            margin-top: 10px;
+            grid-column: 1 / -1;
+            background-color: rgb(12, 202, 133);
+            border: 2px solid #111;
+            padding: 8px 0;
+            display: flex;
+            justify-content: space-evenly;
+            font-family: Arial, sans-serif;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+         .columna-izquierda {
+            background-color: rgb(210, 85, 214);
+            border: 2px solid #111;
+            padding: 10px;
+        }
+
+        .columna-izquierda h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #111;
+            padding-bottom: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        .img-logo {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #111;
+            padding-bottom: 10px;
+        }
+
+        .img-logo:last-child {
+            border-bottom: none;
+        }
+
+        .logo {
+            min-width: 40px;
+            max-width: 40px;
+            height: 40px;
+            border: 1px solid #111;
+            background: white;
+            overflow: hidden;
+        }
+
+        .texto-noticias {
+            font-family: Arial, sans-serif;
+            font-size: 0.8em;
+            line-height: 1.2;
+        }
+
+        .texto-noticias small {
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .columna-central {
+            background-color: rgb(128, 255, 0);
+            border: 2px solid #111;
+            padding: 15px;
+        }
+
+        .columna-central h2 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            line-height: 1;
+        }
+
+        .columna-central p {
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            margin-top: 0;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 250px;
+            background-color: #555;
+            border: 2px solid #111;
+            color: white;
+            overflow: hidden;
+        }
+
+         .columna-derecha {
+            background-color: rgb(122, 122, 202);
+            border: 2px solid #111;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .widget {
+            border: 2px solid #111;
+            padding: 10px;
+        }
+
+        .widget h4 {
+            margin: 0 0 10px 0;
+            font-family: Arial, sans-serif;
+            border-bottom: 1px solid #111;
+            padding-bottom: 5px;
+        }
+
+        .icon {
+            border: 1px solid #111;
+            background: white;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .info-clima {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .temp-clima {
+            font-family: Arial, sans-serif;
+        }
+
+        .temp-clima strong {
+            font-size: 1.8em;
+            display: block;
+        }
+
+        .tabla-clima {
+            width: 100%;
+            font-family: Arial, sans-serif;
+            font-size: 0.8em;
+            text-align: left;
+        }
+        footer {
+            grid-column: 1 / -1;
+            background-color: rgb(255, 102, 0);
+            border: 2px solid #111;
+            padding: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+</style>
+<body style = "background-color: red;">
+    <div class="proyecto">
+        <header>
+        <div class="img1">
+            <img src="../imagenes/img.jpg" alt="Mundo">
+        </div>
+        <div class="titulo">
+            <h1>El noticiero</h1>
+            <p>---INFORMACION----ACTUALIDAD----TU DIARIO</p>
+        </div>
+        <div class="informacion">
+            Lunes 26 de mayo del 2025 <br>
+            Año xx | 123456
+        </div>
+    </header>
+    <nav class="menu" >
+        <span>INICIO  </span> |
+        <span>MUNDO   </span> |
+        <span>NACIONAL</span> |
+        <span>ECONOMIA</span> |
+    </nav>
+    <aside class="columna-izquierda">
+            <h3 style="border: bel;">ÚLTIMAS NOTICIAS</h3>
+            
+            <div class="img-logo">
+                <div class="logo">
+                    <img src="../imagenes/img.jpg" alt="Sostenible">
+                </div>
+                <div class="texto-noticias">
+                    El mundo avanza hacia un futuro mas sostenible
+                    <small>Pág. 2</small>
+                </div>
+            </div>
+
+            <div class="img-logo">
+                <div class="logo">
+                    <img src="../imagenes/img.jpg" alt="Economia">
+                </div>
+                <div class="texto-noticias">
+                    La economia muestra señales de recuperación
+                    <small>Pág. 3</small>
+                </div>
+            </div>
+
+            <div class="img-logo">
+                <div class="logo">
+                    <img src="../imagenes/img.jpg" alt="Deportes">
+                </div>
+                <div class="texto-noticias">
+                    El equipo local logra una gran victoria
+                    <small>Pág. 4</small>
+                </div>
+            </div>
+
+            <div class="img-logo">
+                <div class="logo">
+                    <img src="../imagenes/img.jpg" alt="Tecnología">
+                </div>
+                <div class="texto-noticias">
+                    La tecnología sigue transformando nuestras vidas
+                    <small>Pág. 5</small>
+                </div>
+            </div>
+        </aside>
+
+        <main class="columna-central" style = "background-color: purple;">
+            <h2>Un mejor mañana<br>es posible</h2>
+            <p>La innovación, la educación y el trabajo en equipo son clave para construir un futuro más justo y sostenible.</p>
+            <div class="main-image">
+                <img src="../imagenes/img.jpg" alt="Futuro Sostenible">
+            </div>
+        </main>
+
+        <aside class="columna-derecha" style = "background-color: aqua;">
+            <div class="widget">
+                <h4>DESTACADO</h4>
+                <div style="text-align: center; margin-bottom: 10px;">
+                    <div class="icon" style="margin: 0 auto; width: 50px; height: 50px;">
+                        <img src="../imagenes/img.jpg" alt="Destacado">
+                    </div>
+                </div>
+                <strong style="font-family: 'Times New Roman', serif; font-size: 1.1em; display: block; margin-bottom: 5px;">Pequeñas acciones, grandes cambios</strong>
+                <p style="font-family: Arial, sans-serif; font-size: 0.75em; margin: 0;">Cada decisión cuenta. Desde el consumo responsable hasta el apoyo a la educación, podemos hacer la diferencia.</p>
+                <div style="text-align: right; font-family: Arial, sans-serif; font-size: 0.7em; font-weight: bold; margin-top: 5px;">Pág. 7</div>
+            </div>
+
+            <div class="widget">
+                <h4>EL TIEMPO</h4>
+                <div class="info-clima">
+                    <div class="icon" style="border: none; width: 40px; height: 40px;">
+                        <img src="../imagenes/img.jpg" alt="Soleado">
+                    </div>
+                    <div class="temp-clima">
+                        <strong>23°C</strong>
+                        Soleado
+                    </div>
+                </div>
+                <table class="tabla-clima">
+                    <tr><td> Mar</td><td>22° / 12°</td></tr>
+                    <tr><td> Mié</td><td>21° / 11°</td></tr>
+                    <tr><td>Jue</td><td>20° / 10°</td></tr>
+                </table>
+            </div>
+
+        </aside>
+        <footer style = "background-color: brown;">
+            JUNTOS HACEMOS LA DIFERENCIA
+        </footer>
+    </div>
+</body>
+</html>
