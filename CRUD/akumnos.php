@@ -35,6 +35,7 @@ $resultado = mysqli_query($conexion, "SELECT * FROM alumnos");
             <td><?php echo $fila['matricula']; ?></td>
             <td>
                 <a href="delete.php?eliminar=<?php echo $fila['id']; ?>">Eliminar</a>
+                <a href="editar.php?id=<?php echo $fila['id']; ?>">Actualizar</a>
             </td>
         </tr>
         <?php } ?>
