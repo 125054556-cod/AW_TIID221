@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,3 +14,7 @@ function conection(){
     echo "Connected successfully";
 }
 ?>   
+=======
+$conexion = mysqli_connect("localhost", "root", "", "aw221");
+?>
+>>>>>>> 222a5eab803ccf6442e128e284ff859fd1c17298
