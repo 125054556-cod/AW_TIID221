@@ -22,12 +22,12 @@ def index():
     return render_template('index.html', listPeliculas = conPeliculas)
 
 @app.route('/editar/<int:id>')
-def editar():
+def editar(id):
     con = mysql.connection.cursor()
     con.execute('SELECT * FROM tb_peliculas WHERE id=%s', (id,))
     consultarId = con.fetchone()
     con.close()
-    return render_template('editarPeliculas.html')
+    return render_template('editarPeliculas.html' , pel = consultarId)
 
 @app.route('/actualizar/<int:id>',methods = ['POST'])
 def actualizar(id):
@@ -39,7 +39,10 @@ def actualizar(id):
         resenia = request.form['txtReseña']
 
         con = mysql.connection.cursor()
-        con.execute('UPDATE tb_peliculas SET titulo=%s, autor=%s, lanzamiento =%s,calificaion=%s,reseña=%s', (titulo,autor,anio,calificacion,resenia,id))
+        con.execute('UPDATE tb_peliculas SET titulo=%s, autor=%s, lanzamiento =%s,calificaCion=%s,reseña=%s WHERE id=%s', (titulo,autor,anio,calificacion,resenia,id))
+        mysql.connection.commit()
+    flash('SE ACTUALIZO A PELICULA' +titulo)
+    return redirect(url_for('index'))
 
 
 
