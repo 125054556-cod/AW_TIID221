@@ -159,7 +159,7 @@ def usuario():
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("login"))  # Corregido: redirige limpio a /login
+    return redirect(url_for("login"))  
 
 
 # Iniciamos el servidor Flask en el puerto 5000
