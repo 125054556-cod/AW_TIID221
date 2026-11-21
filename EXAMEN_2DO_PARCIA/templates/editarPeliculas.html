@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDITAR PELICULAS</title>
+</head>
+<body>
+    <div>
+        <h1>EDITAR PELICULAS</h1>
+        <form action="/actualizar/{{pel.0}}" method="POST">
+            <input type="text" name = "txtTitulo" value = "{{pel.1}}">
+            <input type="text" name = "txtAutor" value = "{{pel.2}}">
+            <input type="number" name = "txtAnio" value = "{{pel.3}}">
+            <input type="number" name = "txtCalificacion" value = "{{pel.4}}">
+            <input type="text" name = "txtReseña" value = "{{pel.5}}">
+            <button type="submit">ACTUALIZAR</button>
+        </form>
+    </div>
+</body>
+</html>

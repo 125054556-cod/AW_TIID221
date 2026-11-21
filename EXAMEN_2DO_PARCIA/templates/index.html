@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD DE PELICULAS</title>
+</head>
+<body>
+    <div>
+        <h1>CRUD DE PELICULAS</h1>
+        {% with mesajes = get_flashed_messages() %}
+            {% if mesajes %}
+                {% for msj in mesajes %}
+                    <h3>{{msj}}</h3>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/guardar" method="POST">
+            <input type="text" name="txtTitulo" placeholder="Escribe el titulo de la pelicula">
+            <input type="text" name="txtAutor" placeholder="Escribe el nombre de autor">
+            <input type="text" name="txtAño" placeholder="Año de lanzamiento">
+            <input type="text" name="txtCalificacion" placeholder="Calificacion">
+            <input type="text" name="txtReseña" placeholder="Reseña">
+            <button type="submit">Guardar</button>
+            <table>
+                <thead>
+                    <tr>
+                        <td>ID:</td>
+                        <td>TITULO</td>
+                        <td>ARTISTA:</td>
+                        <td>Año de publicaion</td>
+                        <td>CALIFICACION</td>
+                        <td>RESEÑA</td>
+                    </tr>
+                </thead>
+            </table>
+            <table>
+                <tbody>
+                    {% for pel in listPeliculas %}
+                    <tr>
+                        <td>{{pel.0}}</td>
+                        <td>{{pel.1}}</td>
+                        <td>{{pel.2}}</td>
+                        <td>{{pel.3}}</td>
+                        <td>{{pel.4}}</td>
+                        <td>{{pel.5}}</td>
+                        <td>{{pel.6}}</td>
+                        <td>
+                            <a href="/editar/{{pel.0}}">EDITAR</a>
+                            <a href="#">ELIMINAR</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+</body>
+</html>
