@@ -1,32 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Registro de Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <div>
-        <h1>Registro de usuarios</h1>
-        <form action="/registro" method="POST">
-            <label>Nombre(s): </label>
-            <input type="text" name="nombre">
-            <label>Apellido paterno: </label>
-            <input type="text" name="apellido_p">
-            <label>Apellido materno: </label>
-            <input type="text" name="apellido_m">
-            <label>Correo: </label>
-            <input type="email" name="correo">
-            <label>Contraseña: </label>
-            <input type="password" name="password">
-            <label for="id_rol">Rol: </label>
-            <select name="id_rol" id="id_rol">
-                <option value="1">Administrador</option>
-                <option value="2">Usuario</option>
-            </select>
-            <button type="submit">Registrarse</button>
-        </form>
-        <p><a href="{{ url_for('logout') }}">Regresar</a></p>
+<body class="min-h-screen flex items-center justify-center bg-base-200 p-4">
+
+    <div class="card w-full max-w-md bg-base-100 shadow-md">
+        <div class="card-body">
+            <h2 class="card-title justify-center text-2xl font-bold mb-2">Crear Cuenta</h2>
+
+            {% if error %}
+            <div role="alert" class="alert alert-error text-sm py-2">
+                <span>{{ error }}</span>
+            </div>
+            {% endif %}
+
+            <form action="{{ url_for('registro') }}" method="POST" class="space-y-3">
+                <div class="form-control">
+                    <label class="label py-1">
+                        <span class="label-text">Nombre</span>
+                    </label>
+                    <input type="text" name="nombre" placeholder="Ej. Juan" class="input input-bordered w-full" required />
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="form-control">
+                        <label class="label py-1">
+                            <span class="label-text">Apellido Paterno</span>
+                        </label>
+                        <input type="text" name="apellido_p" placeholder="Pérez" class="input input-bordered w-full" required />
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label py-1">
+                            <span class="label-text">Apellido Materno</span>
+                        </label>
+                        <input type="text" name="apellido_m" placeholder="López" class="input input-bordered w-full" required />
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label class="label py-1">
+                        <span class="label-text">Correo electrónico</span>
+                    </label>
+                    <input type="email" name="correo" placeholder="correo@ejemplo.com" class="input input-bordered w-full" required />
+                </div>
+
+                <div class="form-control">
+                    <label class="label py-1">
+                        <span class="label-text">Contraseña</span>
+                    </label>
+                    <input type="password" name="password" placeholder="••••••••" class="input input-bordered w-full" required />
+                </div>
+
+                <div class="form-control">
+                    <label class="label py-1">
+                        <span class="label-text">Rol</span>
+                    </label>
+                    <select name="id_rol" class="select select-bordered w-full" required>
+                        <option value="" disabled selected>Selecciona un rol</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Usuario</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-full mt-3">Registrarse</button>
+            </form>
+
+            <p class="text-center text-sm mt-4">
+                ¿Ya tienes cuenta?
+                <a href="{{ url_for('login') }}" class="link link-primary">Inicia sesión</a>
+            </p>
+        </div>
     </div>
+
 </body>
 </html>

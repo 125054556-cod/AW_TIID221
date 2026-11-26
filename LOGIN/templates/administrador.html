@@ -1,12 +1,17 @@
 {% extends 'nav_footer.html' %}
+
+{% block title %}Panel de Administrador{% endblock %}
+
 {% block content %}
-    <div class="p-10">
-
-
-        <h1 class="text-3xl font-bold">
-            Bienvenido, administrador
-        </h1>
-        <p class="mt-4">
-        Este es el contenido principal de la página.</p>
+<div class="card w-full max-w-lg bg-base-100 shadow-md">
+    <div class="card-body text-center">
+        <div class="flex justify-center mb-2">
+            <span class="badge badge-primary badge-outline">Administrador</span>
+        </div>
+        <h1 class="text-3xl font-bold">Bienvenido, {{ nombre }}</h1>
+        <p class="text-base-content/70 mt-2">
+            Has iniciado sesión en el panel de administracion del sistema
+        </p>
     </div>
+</div>
 {% endblock %}

@@ -1,24 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+    <title>Iniciar Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-   <div>
-    <h1>INICIAR SESIÓN</h1>
-    <form action="/login" method="POST">
-        <label>Correo:</label>
-        <input type="email" name="correo" required>
-        <br><br>
-        <label>Contraseña:</label>
-        <input type="password" name="password" required>
-        <br><br>
-        <button type="submit">Entrar</button>
-    </form>
-    <p>¿No tienes cuenta?</p>
-   <a href="{{ url_for('registro') }}">Registrate</a>
-   </div>
+<body class="min-h-screen flex items-center justify-center bg-base-200 p-4">
+
+    <div class="card w-full max-w-sm bg-base-100 shadow-md">
+        <div class="card-body">
+            <h2 class="card-title justify-center text-2xl font-bold mb-2">Iniciar Sesión</h2>
+
+            {% if error %}
+            <div role="alert" class="alert alert-error text-sm py-2">
+                <span>{{ error }}</span>
+            </div>
+            {% endif %}
+
+            <form action="{{ url_for('login') }}" method="POST" class="space-y-4">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Correo electrónico</span>
+                    </label>
+                    <input type="email" name="correo" placeholder="correo@ejemplo.com" class="input input-bordered w-full" required />
+                </div>
+
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Contraseña</span>
+                    </label>
+                    <input type="password" name="password" placeholder="••••••••" class="input input-bordered w-full" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-full mt-2">Entrar</button>
+            </form>
+
+            <p class="text-center text-sm mt-4">
+                ¿No tienes cuenta?
+                <a href="{{ url_for('registro') }}" class="link link-primary">Regístrate</a>
+            </p>
+        </div>
+    </div>
+
 </body>
 </html>

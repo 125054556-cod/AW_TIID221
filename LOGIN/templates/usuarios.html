@@ -1,14 +1,17 @@
 {% extends 'nav_footer.html' %}
 
+{% block title %}Panel de Usuario{% endblock %}
+
 {% block content %}
-
-<div class="p-10">
-    <h1 class="text-3xl font-bold">
-        Bienvenido, {{ nombre }}
-    </h1>
-    <p class="mt-4">
-        Este es el panel principal del usuario.
-    </p>
+<div class="card w-full max-w-lg bg-base-100 shadow-md">
+    <div class="card-body text-center">
+        <div class="flex justify-center mb-2">
+            <span class="badge badge-secondary badge-outline">Usuario</span>
+        </div>
+        <h1 class="text-3xl font-bold">Bienvenido, {{ nombre }}</h1>
+        <p class="text-base-content/70 mt-2">
+            Este es tu panel principal de usuario
+        </p>
+    </div>
 </div>
-
 {% endblock %}
