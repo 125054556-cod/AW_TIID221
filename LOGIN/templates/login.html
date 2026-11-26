@@ -11,7 +11,7 @@
 
     <div class="card w-full max-w-sm bg-base-100 shadow-md">
         <div class="card-body">
-            <h2 class="card-title justify-center text-2xl font-bold mb-2">Iniciar Sesión</h2>
+            <h2 class="card-title justify-center text-2xl font-bold mb-2">Iniciar Sesion</h2>
 
             {% if error %}
             <div role="alert" class="alert alert-error text-sm py-2">
@@ -22,7 +22,7 @@
             <form action="{{ url_for('login') }}" method="POST" class="space-y-4">
                 <div class="form-control">
                     <label class="label">
-                        <span class="label-text">Correo electrónico</span>
+                        <span class="label-text">Correo electronico</span>
                     </label>
                     <input type="email" name="correo" placeholder="correo@ejemplo.com" class="input input-bordered w-full" required />
                 </div>
@@ -39,7 +39,7 @@
 
             <p class="text-center text-sm mt-4">
                 ¿No tienes cuenta?
-                <a href="{{ url_for('registro') }}" class="link link-primary">Regístrate</a>
+                <a href="{{ url_for('registro') }}" class="link link-primary">Registrate</a>
             </p>
         </div>
     </div>
